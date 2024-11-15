@@ -1,4 +1,4 @@
-![alt text](path_to_banner_image)
+![alt text](images/bp-student.png)
 # Predicting Student Success with Machine Learning
 Author: Elijah Lopez
 
@@ -37,7 +37,7 @@ Next I focused numeric features, performing statistical tests for:
 * Student Outcomes vs Units Graded
 
 Finally, I creeated a machine learning model.
-In attempt to tune the model I handled data in this way:
+Initially, I tested several variations of model to determine baseline performance. XGBoost was most promising. In attempt to tune the model and improve performance I handled data in this way:
 * Binary features -Left as is
 * Cardinal features - Utilized target encoding
 * Ordinal features - Ranked and reordered label types to be more logical
@@ -45,48 +45,80 @@ In attempt to tune the model I handled data in this way:
 * Numeric features - Compared standard scaling and min/max scaling
 
 I also attempted model improvements through:
-* 
+* Resampling using SMOTE
+* GridSearch hyperparameter optimization
 
 
 ## Results
+### Student Outcomes vs Class Time
+![alt text](images/rec1.png)
+* Students who take morning classes experience higher rates of graduation and continued enrollment compared to those that take evening classes.
+* Students that take evening classes are more likely to drop out compared to other students.
+* Statistical Analysis using an alpha = 0.05 shows that these findings are significant.
 
 
-### Rec 1
-![alt text]('images/rec1.png')
-
-* 
-
-
-### Rec 2
-![alt text]('images/rec2.png')
-
-* 
+### Student Outcomes vs Displacement
+![alt text](images/rec2.png)
+* Initial thought was that displacement would lead to worse student outcomes (higher drop out rate / lower graduation rate).
+* This sample demonstrated the opposite; Displaced students better student outcomes.
+* Statistical Analysis using an alpha = 0.05 showed that the two groups (Displaced & Not Displaced) were NOT significantly different.
 
 
-### Rec 3
-![alt text]('images/rec3.png')
+### Graduation Rates vs Scholarship Status
+![alt text](images/rec3.png)
+* Students that are awarded scholarships experience higher graduation rates than those thar are not.
+* Statistical Analysis using an alpha = 0.05 shows that these findings are significant.
 
-* 
+### Student Outcomes vs Units Approved & Units Graded
+![alt text](images/rec4.png)
+* All student groups (Dropout, Enrolled, Graduates) experience a decrease in approved credits from first semester to second semester.
+* Dropouts perform worst from first semester to second semester with an average decrease in approved units of almost half a unit more than other student groups.
+* Statistical Analysis using an alpha = 0.05 shows that these findings are significant for all groups.
 
+* Units graded is about 40-50% less for students that end up dropping out. This could be due to a number of factors such as financial constraints, difficulty handling the rigor of the college courses, or seriousness about degree program. Meetings with academic advisors may help tease out these challenges to open up more opportunities for student outcomes.
+* Statistical Analysis using an alpha = 0.05 shows:
+    * Dropouts showed a statistically significant decline in units graded
+    * Enrolled students showed no statistical difference in units graded.
+    * Graduates showed a mild, but statistically significant, increase in units graded. 
 
-### Rec 4
-![alt text]('images/rec3.png')
-
-* 
+### XGBoost Model
+* Baseline accuracy was 78.58%. 
+* Scaling numerical data had no affect on XGBoost performance
+* Target encoding cardinal features had no effect on XGBoost performance
+* Reranking ordinal features in a more logical way had no effect on XGBoost performance
+* One hot encoding had a negative effect on XGBoost memory usage
+* Hyperparameter tuning was completed two times to determine best values in a successively concentrated range. These were determined to be:
+    * 'learning_rate': 0.1
+    * 'max_depth': 3
+    * 'n_estimators': 200
+    * 'subsample': 1
+* Through SMOTE resampling I was able to boost model performance
+* Feature selection using feature importances failed to improve the model
+* Model performance boasts 81% accuracy on training data
+* Testing revealed 
 
 
 ## Conclusions
 This analysis leads to three recommendations for 
 
-1. 
+1. Academic advisors should work with students to create a course schedule that prioritizes daytime classes. Additionally, students taking evening classes should be marked as "at-risk" and conferences should be set with Student Services to determine and offer appropriate support for these students.
 
-2. 
+2. Displacement is not a significant predictor of student outcomes. Focus on other variables.
 
-3. 
+3. Student services should work with students on an individual basis to make them aware of scholarship opportunities and help them apply for those that they qualify for.
+
+4. Academic advisors and Student Services should collaborate with students who show a significant drop in approved credits from the first semester to the second semester. By understanding the factors contributing to the decrease in credit approval, they can provide personalized support and solutions to help these students stay enrolled and progress toward graduation.
+
+5. XGBoost Model 
 
 
 ## Next Steps
-*  
+*  * Take a comprehensive approach to identify students who are at highest risk of dropping out. This includes factoring in students that:
+    * Take evening classes
+    * Have lower approved units than average studnet population
+    * Experience sharp declines in approved units and units graded
+* Schedule meetings with identified students to better understand their situation and decisions surrounding the factors above. During this time academic advisors and/or student services should encourage students to take morning classes, build awareness of scholarship opportunities that the student may qualify for, and offer additional support resources (such as tutoring) as necessary.
+* The suggested method of identification is to use the predictive model since it 
 
 
 ## For More Information
