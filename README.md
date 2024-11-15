@@ -54,29 +54,29 @@ I also attempted model improvements through:
 ![alt text](images/rec1.png)
 * Students who take morning classes experience higher rates of graduation and continued enrollment compared to those that take evening classes.
 * Students that take evening classes are more likely to drop out compared to other students.
-* Statistical Analysis using an alpha = 0.05 shows that these findings are significant.
+* Chi-Square statistical testing using an alpha = 0.05 shows that these findings are significant.
 
 
 ### Student Outcomes vs Displacement
 ![alt text](images/rec2.png)
-* Initial thought was that displacement would lead to worse student outcomes (higher drop out rate / lower graduation rate).
+* Initial thought was that displacement would lead to worse student outcomes (higher dropout rate / lower graduation rate).
 * This sample demonstrated the opposite; Displaced students better student outcomes.
-* Statistical Analysis using an alpha = 0.05 showed that the two groups (Displaced & Not Displaced) were NOT significantly different.
+* Chi-Square statistical testing using an alpha = 0.05 showed that the two groups (Displaced & Not Displaced) were NOT significantly different.
 
 
 ### Graduation Rates vs Scholarship Status
 ![alt text](images/rec3.png)
-* Students that are awarded scholarships experience higher graduation rates than those thar are not.
-* Statistical Analysis using an alpha = 0.05 shows that these findings are significant.
+* Students that are awarded scholarships experience higher graduation rates than those that are not.
+* Z-Test statistical testing using an alpha = 0.05 shows that these findings are significant.
 
 ### Student Outcomes vs Units Approved & Units Graded
 ![alt text](images/rec4.png)
 * All student groups (Dropout, Enrolled, Graduates) experience a decrease in approved credits from first semester to second semester.
 * Dropouts perform worst from first semester to second semester with an average decrease in approved units of almost half a unit more than other student groups.
-* Statistical Analysis using an alpha = 0.05 shows that these findings are significant for all groups.
+* Paired T-Test statistical testing using an alpha = 0.05 shows that these findings are significant for all groups.
 
 * Units graded is about 40-50% less for students that end up dropping out. This could be due to a number of factors such as financial constraints, difficulty handling the rigor of the college courses, or seriousness about degree program. Meetings with academic advisors may help tease out these challenges to open up more opportunities for student outcomes.
-* Statistical Analysis using an alpha = 0.05 shows:
+* Paired T-Test statistical testing using an alpha = 0.05 shows:
     * Dropouts showed a statistically significant decline in units graded
     * Enrolled students showed no statistical difference in units graded.
     * Graduates showed a mild, but statistically significant, increase in units graded. 
@@ -99,7 +99,7 @@ I also attempted model improvements through:
 
 
 ## Conclusions
-This analysis leads to 5 recommendations for 
+This analysis leads to 5 recommendations:
 
 1. Academic advisors should work with students to create a course schedule that prioritizes daytime classes. Additionally, students taking evening classes should be marked as "at-risk" and conferences should be set with Student Services to determine and offer appropriate support for these students.
 
@@ -109,16 +109,18 @@ This analysis leads to 5 recommendations for
 
 4. Academic advisors and Student Services should collaborate with students who show a significant drop in approved credits from the first semester to the second semester. By understanding the factors contributing to the decrease in credit approval, they can provide personalized support and solutions to help these students stay enrolled and progress toward graduation.
 
-5. Use XGBoost Model to flag students that are at risk of dropping out and implement a proactive intervention strategy to offer support. 
+5. Academic Advisors and Student Services should use XGBoost predictive modeling capabilities to flag students that are at risk of dropping out and implement a proactive intervention strategy to offer support. 
 
 
 ## Next Steps
-*  * Take a comprehensive approach to identify students who are at highest risk of dropping out. This includes factoring in students that:
+* Take a comprehensive approach to identify students who are at highest risk of dropping out. This includes factoring in students that:
     * Take evening classes
-    * Have lower approved units than average studnet population
+    * Have lower approved units than average student population
     * Experience sharp declines in approved units and units graded
 * Schedule meetings with identified students to better understand their situation and decisions surrounding the factors above. During this time academic advisors and/or student services should encourage students to take morning classes, build awareness of scholarship opportunities that the student may qualify for, and offer additional support resources (such as tutoring) as necessary.
-* The suggested method of identification is to use the predictive model since it resutled in 76% accuracy.
+* The suggested method of identification is to use the predictive model since it resulted in 76% accuracy.
+* Gather more data for students that dropout or enrolled to solve the class imbalance issue and potentially increase the model's predictive power.
+* Explore model automation for ease of use for non technical users and deployment.
 
 
 ## For More Information
