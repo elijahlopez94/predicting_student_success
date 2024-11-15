@@ -1,5 +1,5 @@
 ![alt text](images/bp-student.png)
-# Predicting Student Success with Machine Learning
+# Predicting Student Outcomes with Machine Learning
 Author: Elijah Lopez
 
 
@@ -38,7 +38,7 @@ Next I focused numeric features, performing statistical tests for:
 
 Finally, I creeated a machine learning model.
 Initially, I tested several variations of model to determine baseline performance. XGBoost was most promising. In attempt to tune the model and improve performance I handled data in this way:
-* Binary features -Left as is
+* Binary features - Left intact
 * Cardinal features - Utilized target encoding
 * Ordinal features - Ranked and reordered label types to be more logical
 * Other categorical - Utilized one hot encoding
@@ -94,12 +94,12 @@ I also attempted model improvements through:
     * 'subsample': 1
 * Through SMOTE resampling I was able to boost model performance
 * Feature selection using feature importances failed to improve the model
-* Model performance boasts 81% accuracy on training data
-* Testing revealed 
+* Model performance was 78% accuracy on training data
+* Testing revealed 76% accuracy, demonstrating strong generalization.
 
 
 ## Conclusions
-This analysis leads to three recommendations for 
+This analysis leads to 5 recommendations for 
 
 1. Academic advisors should work with students to create a course schedule that prioritizes daytime classes. Additionally, students taking evening classes should be marked as "at-risk" and conferences should be set with Student Services to determine and offer appropriate support for these students.
 
@@ -109,7 +109,7 @@ This analysis leads to three recommendations for
 
 4. Academic advisors and Student Services should collaborate with students who show a significant drop in approved credits from the first semester to the second semester. By understanding the factors contributing to the decrease in credit approval, they can provide personalized support and solutions to help these students stay enrolled and progress toward graduation.
 
-5. XGBoost Model 
+5. Use XGBoost Model to flag students that are at risk of dropping out and implement a proactive intervention strategy to offer support. 
 
 
 ## Next Steps
@@ -118,13 +118,12 @@ This analysis leads to three recommendations for
     * Have lower approved units than average studnet population
     * Experience sharp declines in approved units and units graded
 * Schedule meetings with identified students to better understand their situation and decisions surrounding the factors above. During this time academic advisors and/or student services should encourage students to take morning classes, build awareness of scholarship opportunities that the student may qualify for, and offer additional support resources (such as tutoring) as necessary.
-* The suggested method of identification is to use the predictive model since it 
+* The suggested method of identification is to use the predictive model since it resutled in 76% accuracy.
 
 
 ## For More Information
-See the full analysis in the [Jupyter Notebook](path_to_jupyter_notebook_on_GitHub) or review this [presentation](URL_for_slides). Additionally, all visualizations can be viewed on [Tableau](URL_for_tableau).
+See the full analysis in the [Jupyter Notebook](https://github.com/elijahlopez94/predicting_student_outcomes_with_machine_learning/blob/main/machine_learning.ipynb) or review this [presentation](https://docs.google.com/presentation/d/1Dztu0CgYZZRJ5c6WN4qeJ0swW_WtZPBUl4YQxz_eA-8/edit?usp=sharing).
 
 For additional info, contact the author at:
 
 Elijah Lopez | elijahlopez94@gmail.com
-
